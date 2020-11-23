@@ -1,0 +1,21 @@
+{
+    "name": "yangyongxu/upload",
+    "description": "upload",
+    "type": "library",
+    "require": {
+        "aliyuncs/oss-sdk-php": "~2.0",
+        "qiniu/php-sdk": "~7.3"
+    },
+    "authors": [
+        {
+            "name": "yangyongxu",
+            "email": "516705893@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+    	"psr-4": {
+      		"yangyongxu\\uoload\\": "src/"
+    	}
+  	}
+}
