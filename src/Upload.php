@@ -11,7 +11,7 @@ class Upload{
 	 * @param array $config 
 	 */
 	private function __construct($type,$config){
-		$type = ucfirst(strtolower($type));
+		$type = 'yangyongxu\\\upload\\'.$type.'\\'.ucfirst(strtolower($type));
 		try {
 			$this->client = new $type($config);
 		} catch (\Exception $e) {

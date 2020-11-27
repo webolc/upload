@@ -12,12 +12,12 @@ class Qiniu implements Uploadinterface{
 	private $error;
 	public function __construct($config){
 		$con = [
-				'ACCESS_KEY' => '24524',//accessKeyId
-				'SECRET_KEY' => '242',//accessKeySecret
-				'ENDPOINT' => 'oss-cn-chengdu-422.aliyuncs.com',//endpoint
-				'signUploadHost' => 'https://757.oss-cn-chengdu.aliyuncs.com',
-				'uploadCallbackUrl' => 'https://api.72575.com/575/57/575.7html',
-				'BUCKET' => '4574'
+			'ACCESS_KEY' => '21745',//accessKeyId
+			'SECRET_KEY' => '445',//accessKeySecret
+			'ENDPOINT' => 'oss-cn-454-internal.aliyuncs.com',//endpoint
+			'signUploadHost' => 'https://4534.oss-cn-chengdu.aliyuncs.com',
+			'uploadCallbackUrl' => 'https://5324.4524.com/callback/upload/alioss.html',
+			'BUCKET' => '4524'
 		];
 		$this->config = array_merge($con,$config);
 		// 初始化签权对象

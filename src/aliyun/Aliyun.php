@@ -1,5 +1,5 @@
 <?php
-namespace yangyongxu\upload;
+namespace yangyongxu\upload\aliyun;
 
 use OSS\OssClient;
 use OSS\Core\OssException;
@@ -13,16 +13,20 @@ class Aliyun implements Uploadinterface{
 	private $error;
 	public function __construct($config){
 		$con = [
-			'ACCESS_ID' => '2452',//accessKeyId
-			'ACCESS_KEY' => '245',//accessKeySecret
-			'ENDPOINT' => 'oss-cn-chen45324yuncs.com',//endpoint
-			'signUploadHost' => 'https://242.oss-cn-chengdu.aliyuncs.com',
-			'uploadCallbackUrl' => 'https://432554.4255.com/callback/upload/alioss.html',
-			'BUCKET' => '2452'
+				'ACCESS_ID' => '',//accessKeyId
+				'ACCESS_KEY' => '',//accessKeySecret
+				'ENDPOINT' => 'oss-cn-chengdu-internal.aliyuncs.com',//endpoint
+				'signUploadHost' => 'https://xxx.oss-cn-chengdu.aliyuncs.com',
+				'uploadCallbackUrl' => '',
+				'BUCKET' => ''
 		];
+		$site_id = isset($config['site_id'])?$config['site_id']:0;
+		$user_id = isset($config['user_id'])?$config['user_id']:0;
+		$con['uploadCallbackUrl'] .='?site_id='.$site_id.'&user_id='.$user_id;
+		
 		$this->config = array_merge($con,$config);
 		try {
-			return new OssClient($this->config['ACCESS_ID'],$this->config['ACCESS_KEY'],$this->config['ENDPOINT']);
+			$this->client = new OssClient($this->config['ACCESS_ID'],$this->config['ACCESS_KEY'],$this->config['ENDPOINT']);
 		} catch (OssException $e) {
 			$this->error = __FUNCTION__ . "creating OssClient instance: FAILED";
 			return null;
