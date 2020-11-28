@@ -28,7 +28,7 @@ class Upload{
 			static::$_this[$k] = new self($type,$config);
 			static::$_this[$k]->k = $k;
 		}
-		return static::$_this[$k];
+		return static::$_this[$k]->client;
 	}
 	/**
 	 * 克隆方法私有化，防止复制实例
