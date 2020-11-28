@@ -15,7 +15,7 @@
     "minimum-stability": "dev",
     "autoload": {
     	"psr-4": {
-      		"yangyongxu\\uoload\\": "src/"
+      		"yangyongxu\\upload\\": "src/"
     	}
   	}
 }
