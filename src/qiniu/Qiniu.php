@@ -2,11 +2,12 @@
 namespace yangyongxu\upload;
 
 use Qiniu\Auth;
+use yangyongxu\upload\File;
 /**
  * 七牛云文件接口
  * @author YYX
  */
-class Qiniu implements Uploadinterface{
+class Qiniu implements File{
 	
 	private $config;
 	private $error;

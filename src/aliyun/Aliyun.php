@@ -3,11 +3,12 @@ namespace yangyongxu\upload\aliyun;
 
 use OSS\OssClient;
 use OSS\Core\OssException;
+use yangyongxu\upload\File;
 /**
  * 阿里云文件接口
  * @author YYX
  */
-class Aliyun implements Uploadinterface{
+class Aliyun implements File{
 	
 	private $config;
 	private $error;

@@ -1,6 +1,7 @@
 <?php
 namespace yangyongxu\upload\local;
 
+use yangyongxu\upload\File;
 /**
  * 本地文件接口
  * @author YYX
